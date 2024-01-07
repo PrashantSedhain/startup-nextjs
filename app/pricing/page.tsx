@@ -13,7 +13,7 @@ const PricingPage = () => {
   return (
     <>
       <Breadcrumb
-        pageName="Subscription Options"
+        pageName="Pricing Page"
         description="We provide several pricing plans that fit your needs."
       />
       <Pricing />
