@@ -12,7 +12,7 @@ const Pricing = () => {
       <div className="container">
         <SectionTitle
           title="Simple and Affordable Pricing"
-          paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+          paragraph="We provide several pricing plans that fit your needs."
           center
           width="665px"
         />
@@ -60,45 +60,48 @@ const Pricing = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-2">
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <PricingBox
+              buttonText="Secure Early Access"
+              packageName="Early Bird Access"
+              price={isMonthly ? "99" : "999"}
+              duration={isMonthly ? "mo" : "yr"}
+              subtitle="We are currently offering an early bird package for $99/month or $999 for the first year."
+            >
+              <OfferList text="Automatic Funds Verification" status="active" />
+              <OfferList text="Listing Creation" status="active" />
+              <OfferList text="Automatic NDA Creation" status="active" />
+              <OfferList
+                text="Document Storage and Sharing upto 5 GB"
+                status="active"
+              />
+              <OfferList
+                text="AI Assisted Listing Creation"
+                status="inactive"
+              />
+              <OfferList text="Priority Issue Resolution" status="inactive" />
+              <OfferList text="In Platform NDA Signing" status="inactive" />
+            </PricingBox>
+          </div>
           <PricingBox
-            packageName="Lite"
-            price={isMonthly ? "40" : "120"}
-            duration={isMonthly ? "mo" : "yr"}
-            subtitle="Lorem ipsum dolor sit amet adiscing elit Mauris egestas enim."
-          >
-            <OfferList text="All UI Components" status="active" />
-            <OfferList text="Use with Unlimited Projects" status="active" />
-            <OfferList text="Commercial Use" status="active" />
-            <OfferList text="Email Support" status="active" />
-            <OfferList text="Lifetime Access" status="inactive" />
-            <OfferList text="Free Lifetime Updates" status="inactive" />
-          </PricingBox>
-          <PricingBox
-            packageName="Basic"
-            price={isMonthly ? "399" : "789"}
-            duration={isMonthly ? "mo" : "yr"}
-            subtitle="Lorem ipsum dolor sit amet adiscing elit Mauris egestas enim."
-          >
-            <OfferList text="All UI Components" status="active" />
-            <OfferList text="Use with Unlimited Projects" status="active" />
-            <OfferList text="Commercial Use" status="active" />
-            <OfferList text="Email Support" status="active" />
-            <OfferList text="Lifetime Access" status="active" />
-            <OfferList text="Free Lifetime Updates" status="inactive" />
-          </PricingBox>
-          <PricingBox
+            buttonText="Register for Plus"
+            disabled={true}
             packageName="Plus"
-            price={isMonthly ? "589" : "999"}
+            price={isMonthly ? "-" : "-"}
             duration={isMonthly ? "mo" : "yr"}
-            subtitle="Lorem ipsum dolor sit amet adiscing elit Mauris egestas enim."
+            subtitle="We are still discussing about our pricing structure and will soon make it available before our beta release in June."
           >
-            <OfferList text="All UI Components" status="active" />
-            <OfferList text="Use with Unlimited Projects" status="active" />
-            <OfferList text="Commercial Use" status="active" />
-            <OfferList text="Email Support" status="active" />
-            <OfferList text="Lifetime Access" status="active" />
-            <OfferList text="Free Lifetime Updates" status="active" />
+            <OfferList text="Automatic Funds Verification" status="active" />
+            <OfferList text="Listing Creation" status="active" />
+            <OfferList text="Automatic NDA Creation" status="active" />
+            <OfferList
+              text="Document Storage and Sharing upto 50 GB"
+              status="active"
+            />
+            <OfferList text="AI Assisted Listing Creation" status="active" />
+            <OfferList text="Priority Issue Resolution" status="active" />
+            <OfferList text="In Platform NDA Signing" status="active" />
           </PricingBox>
         </div>
       </div>
