@@ -9,7 +9,9 @@ import Hero from "@/components/Hero";
 import Pricing from "@/components/Pricing";
 import Testimonials from "@/components/Testimonials";
 import Video from "@/components/Video";
+import { gql } from "@apollo/client";
 import { Metadata } from "next";
+import HEALTH from "@/src/queries/getHealth";
 
 export const metadata: Metadata = {
   title: "Business Prokerage",
@@ -17,7 +19,25 @@ export const metadata: Metadata = {
     "Unlock the full potential of your business brokerage with Business Prokerage. Designed specifically for brokers, our platform automates critical tasks such as NDA signatures, leverages AI for optimized business listings, and provides direct access to verified investors. Streamline your workflow, increase efficiency, and seize new opportunities for growth. Experience the transformative power of our technology and revolutionize your brokerage operations today.",
 };
 
-export default function Home() {
+const query = gql`
+  query {
+    health
+  }
+`;
+
+const getData = async () => {
+  const data = await fetch("http://localhost:4000/exp/graphql", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ query: query.loc.source.body }),
+  });
+  return data.json();
+};
+
+export default async function Home() {
+  const data = await getData();
   return (
     <>
       <ScrollUp />

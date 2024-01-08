@@ -24,10 +24,12 @@ export default function RootLayout({
 
       <body className={`bg-[#FCFCFC] dark:bg-black ${inter.className}`}>
         <Providers>
-          <Header />
-          {children}
-          <Footer />
-          <ScrollToTop />
+          <ApolloWrapper>
+            <Header />
+            {children}
+            <Footer />
+            <ScrollToTop />
+          </ApolloWrapper>
         </Providers>
       </body>
     </html>
@@ -35,3 +37,5 @@ export default function RootLayout({
 }
 
 import { Providers } from "./providers";
+import { ApolloWrapper } from "./ApolloWrapper";
+
