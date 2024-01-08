@@ -6,7 +6,7 @@ const config: CodegenConfig = {
   schema: "http://localhost:4000/exp/graphql",
   documents: "src/**/*.ts",
   generates: {
-    "src/gql/": {
+    "src/generated/": {
       preset: "client",
       plugins: []
     }
