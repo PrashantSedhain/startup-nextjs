@@ -15,7 +15,40 @@ export type Scalars = {
   Float: { input: number; output: number; }
 };
 
+export type BusinessListing = {
+  __typename?: 'BusinessListing';
+  id: Scalars['ID']['output'];
+  price: Scalars['Float']['output'];
+  title: Scalars['String']['output'];
+};
+
+export type Mutation = {
+  __typename?: 'Mutation';
+  addEmailToWaitlist: Response;
+  feedback: Response;
+};
+
+
+export type MutationAddEmailToWaitlistArgs = {
+  email: Scalars['String']['input'];
+  name: Scalars['String']['input'];
+};
+
+
+export type MutationFeedbackArgs = {
+  email: Scalars['String']['input'];
+  message: Scalars['String']['input'];
+  name: Scalars['String']['input'];
+};
+
 export type Query = {
   __typename?: 'Query';
+  businessListings: Array<Maybe<BusinessListing>>;
   health: Scalars['String']['output'];
+};
+
+export type Response = {
+  __typename?: 'Response';
+  message: Scalars['String']['output'];
+  success: Scalars['Boolean']['output'];
 };
