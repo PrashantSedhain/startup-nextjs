@@ -1,6 +1,41 @@
+"use client";
+import { useState } from "react";
+import { isEmail } from "validator";
 import NewsLatterBox from "./NewsLatterBox";
 
 const Contact = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const [nameError, setNameError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [messageError, setMessageError] = useState("");
+
+  const handleSendFeedback = () => {
+    if (name === "") {
+      setNameError("Name cannot be empty");
+    } else {
+      setNameError("");
+    }
+
+    if (!isEmail(email)) {
+      setEmailError("Email is invalid");
+    } else {
+      setEmailError("");
+    }
+
+    if (message === "") {
+      setMessageError("Message cannot be empty");
+    } else {
+      setMessageError("");
+    }
+
+    if (nameError || emailError || messageError) {
+      return;
+    }
+  };
+
   return (
     <section id="contact" className="overflow-hidden py-16 md:py-20 lg:py-28">
       <div className="container">
@@ -28,10 +63,20 @@ const Contact = () => {
                         Your Name
                       </label>
                       <input
-                        type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        type="name"
                         placeholder="Enter your name"
                         className="w-full rounded-sm border border-stroke bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
                       />
+                      {nameError ? (
+                        <p
+                          style={{ color: "red" }}
+                          className="text-base leading-relaxed text-body-color dark:border-white dark:border-opacity-25"
+                        >
+                          {nameError}
+                        </p>
+                      ) : null}
                     </div>
                   </div>
                   <div className="w-full px-4 md:w-1/2">
@@ -43,10 +88,20 @@ const Contact = () => {
                         Your Email
                       </label>
                       <input
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         type="email"
                         placeholder="Enter your email"
                         className="w-full rounded-sm border border-stroke bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
                       />
+                      {emailError ? (
+                        <p
+                          style={{ color: "red" }}
+                          className="text-base leading-relaxed text-body-color dark:border-white dark:border-opacity-25"
+                        >
+                          {emailError}
+                        </p>
+                      ) : null}
                     </div>
                   </div>
                   <div className="w-full px-4">
@@ -58,15 +113,29 @@ const Contact = () => {
                         Your Message
                       </label>
                       <textarea
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
                         name="message"
                         rows={5}
                         placeholder="Enter your Message"
                         className="w-full resize-none rounded-sm border border-stroke bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
                       ></textarea>
+                      {messageError ? (
+                        <p
+                          style={{ color: "red" }}
+                          className="text-base leading-relaxed text-body-color dark:border-white dark:border-opacity-25"
+                        >
+                          {messageError}
+                        </p>
+                      ) : null}
                     </div>
                   </div>
                   <div className="w-full px-4">
-                    <button className="rounded-sm bg-primary px-9 py-4 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 dark:shadow-submit-dark">
+                    <button
+                      type="button"
+                      onClick={handleSendFeedback}
+                      className="rounded-sm bg-primary px-9 py-4 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 dark:shadow-submit-dark"
+                    >
                       Send Message
                     </button>
                   </div>
