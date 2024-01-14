@@ -16,7 +16,6 @@ const NewsLatterBox = () => {
   const [emailErrorMessage, setEmailErrorMessage] = useState("");
 
   async function addEmailToWaitlist() {
-    let hasError = false;
     const requestBody = {
       query: ADD_TO_WAITLIST,
       variables: {
@@ -26,20 +25,18 @@ const NewsLatterBox = () => {
     };
 
     if (!isEmail(email)) {
-      hasError = true;
       setEmailErrorMessage("Email is invalid");
     } else {
       setEmailErrorMessage("");
     }
 
     if (name === "") {
-      hasError = true;
       setNameErrorMessage("Name cannot be empty");
     } else {
       setNameErrorMessage("");
     }
 
-    if (hasError) {
+    if (emailErrorMessage || nameErrorMessage) {
       return;
     }
 
