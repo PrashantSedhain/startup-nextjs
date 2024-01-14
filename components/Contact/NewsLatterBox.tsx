@@ -4,6 +4,7 @@ import ADD_TO_WAITLIST from "@/src/mutation/add_to_waitlist";
 import { useToast } from "@chakra-ui/react";
 import { useTheme } from "next-themes";
 import { useState } from "react";
+import { isEmail } from "validator";
 
 const NewsLatterBox = () => {
   const { theme } = useTheme();
@@ -11,8 +12,11 @@ const NewsLatterBox = () => {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [nameErrorMessage, setNameErrorMessage] = useState("");
+  const [emailErrorMessage, setEmailErrorMessage] = useState("");
 
   async function addEmailToWaitlist() {
+    let hasError = false;
     const requestBody = {
       query: ADD_TO_WAITLIST,
       variables: {
@@ -20,6 +24,24 @@ const NewsLatterBox = () => {
         name,
       },
     };
+
+    if (!isEmail(email)) {
+      hasError = true;
+      setEmailErrorMessage("Email is invalid");
+    } else {
+      setEmailErrorMessage("");
+    }
+
+    if (name === "") {
+      hasError = true;
+      setNameErrorMessage("Please enter a name");
+    } else {
+      setNameErrorMessage("");
+    }
+
+    if (hasError) {
+      return;
+    }
 
     try {
       const response = await fetch(process.env.NEXT_PUBLIC_BASE_URL, {
@@ -84,6 +106,14 @@ const NewsLatterBox = () => {
           placeholder="Enter your name"
           className="mb-4 w-full rounded-sm border border-stroke bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
         />
+        {nameErrorMessage ? (
+          <p
+            style={{ color: "red" }}
+            className="mb-2 text-base leading-relaxed text-body-color dark:border-white dark:border-opacity-25"
+          >
+            {nameErrorMessage}
+          </p>
+        ) : null}
         <input
           type="email"
           name="email"
@@ -92,6 +122,14 @@ const NewsLatterBox = () => {
           placeholder="Enter your email"
           className="mb-4 w-full rounded-sm border border-stroke bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
         />
+        {emailErrorMessage ? (
+          <p
+            style={{ color: "red" }}
+            className="mb-2 text-base leading-relaxed text-body-color dark:border-white dark:border-opacity-25"
+          >
+            {emailErrorMessage}
+          </p>
+        ) : null}
         <input
           type="submit"
           onClick={addEmailToWaitlist}
