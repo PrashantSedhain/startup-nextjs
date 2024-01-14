@@ -34,7 +34,7 @@ const NewsLatterBox = () => {
 
     if (name === "") {
       hasError = true;
-      setNameErrorMessage("Please enter a name");
+      setNameErrorMessage("Name cannot be empty");
     } else {
       setNameErrorMessage("");
     }
@@ -104,12 +104,12 @@ const NewsLatterBox = () => {
           onChange={(e) => setName(e.target.value)}
           name="name"
           placeholder="Enter your name"
-          className="mb-4 w-full rounded-sm border border-stroke bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
+          className="mb-2 w-full rounded-sm border border-stroke bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
         />
         {nameErrorMessage ? (
           <p
             style={{ color: "red" }}
-            className="mb-2 text-base leading-relaxed text-body-color dark:border-white dark:border-opacity-25"
+            className="mb-4 text-base leading-relaxed text-body-color dark:border-white dark:border-opacity-25"
           >
             {nameErrorMessage}
           </p>
@@ -120,12 +120,12 @@ const NewsLatterBox = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your email"
-          className="mb-4 w-full rounded-sm border border-stroke bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
+          className="mb-2 w-full rounded-sm border border-stroke bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
         />
         {emailErrorMessage ? (
           <p
             style={{ color: "red" }}
-            className="mb-2 text-base leading-relaxed text-body-color dark:border-white dark:border-opacity-25"
+            className="mb-4 text-base leading-relaxed text-body-color dark:border-white dark:border-opacity-25"
           >
             {emailErrorMessage}
           </p>
