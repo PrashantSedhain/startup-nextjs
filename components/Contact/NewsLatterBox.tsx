@@ -16,6 +16,7 @@ const NewsLatterBox = () => {
   const [emailErrorMessage, setEmailErrorMessage] = useState("");
 
   async function addEmailToWaitlist() {
+    let hasError = false;
     const requestBody = {
       query: ADD_TO_WAITLIST,
       variables: {
@@ -25,18 +26,20 @@ const NewsLatterBox = () => {
     };
 
     if (!isEmail(email)) {
+      hasError = true;
       setEmailErrorMessage("Email is invalid");
     } else {
       setEmailErrorMessage("");
     }
 
     if (name === "") {
+      hasError = true;
       setNameErrorMessage("Name cannot be empty");
     } else {
       setNameErrorMessage("");
     }
 
-    if (emailErrorMessage || nameErrorMessage) {
+    if (hasError) {
       return;
     }
 
@@ -89,7 +92,7 @@ const NewsLatterBox = () => {
       <h3 className="mb-4 text-2xl font-bold leading-tight text-black dark:text-white">
         Join the Waitlist
       </h3>
-      <p className="mb-11 border-b border-body-color border-opacity-25 pb-11 text-base leading-relaxed text-body-color dark:border-white dark:border-opacity-25">
+      <p className="mb-6 border-b border-body-color border-opacity-25 pb-11 text-base leading-relaxed text-body-color dark:border-white dark:border-opacity-25">
         Business Prokerage is currently in development and we are expecting the
         release the beta version in June 2024. Join the waitlist so we can
         notify you with updates.
@@ -106,7 +109,7 @@ const NewsLatterBox = () => {
         {nameErrorMessage ? (
           <p
             style={{ color: "red" }}
-            className="mb-4 text-base leading-relaxed text-body-color dark:border-white dark:border-opacity-25"
+            className="text-base leading-relaxed text-body-color dark:border-white dark:border-opacity-25"
           >
             {nameErrorMessage}
           </p>
@@ -117,12 +120,12 @@ const NewsLatterBox = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your email"
-          className="mb-2 w-full rounded-sm border border-stroke bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
+          className="mb-2 mt-2 w-full rounded-sm border border-stroke bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
         />
         {emailErrorMessage ? (
           <p
             style={{ color: "red" }}
-            className="mb-4 text-base leading-relaxed text-body-color dark:border-white dark:border-opacity-25"
+            className="text-base leading-relaxed text-body-color dark:border-white dark:border-opacity-25"
           >
             {emailErrorMessage}
           </p>
@@ -131,7 +134,7 @@ const NewsLatterBox = () => {
           type="submit"
           onClick={addEmailToWaitlist}
           value="Join the Waitlist"
-          className="mb-5 flex w-full cursor-pointer items-center justify-center rounded-sm bg-primary px-9 py-4 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 dark:shadow-submit-dark"
+          className="mb-5 mt-2 flex w-full cursor-pointer items-center justify-center rounded-sm bg-primary px-9 py-4 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 dark:shadow-submit-dark"
         />
         <p className="text-center text-base leading-relaxed text-body-color dark:text-body-color-dark">
           Spams are annoying. That is why we will only send you important

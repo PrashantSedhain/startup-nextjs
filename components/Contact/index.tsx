@@ -19,7 +19,9 @@ const Contact = () => {
       setNameError("");
     }
 
-    if (!isEmail(email)) {
+    if (email === "") {
+      setEmailError("Email cannot be empty");
+    } else if (!isEmail(email)) {
       setEmailError("Email is invalid");
     } else {
       setEmailError("");
