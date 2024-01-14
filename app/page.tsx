@@ -12,6 +12,7 @@ import Video from "@/components/Video";
 import { gql } from "@apollo/client";
 import { Metadata } from "next";
 import HEALTH from "@/src/queries/getHealth";
+import { ChakraProvider } from "@chakra-ui/react";
 
 export const metadata: Metadata = {
   title: "Business Prokerage",
@@ -19,27 +20,20 @@ export const metadata: Metadata = {
     "Unlock the full potential of your business brokerage with Business Prokerage. Designed specifically for brokers, our platform automates critical tasks such as NDA signatures, leverages AI for optimized business listings, and provides direct access to verified investors. Streamline your workflow, increase efficiency, and seize new opportunities for growth. Experience the transformative power of our technology and revolutionize your brokerage operations today.",
 };
 
-const query = gql`
-  query {
-    health
-  }
-`;
-
-const getData = async () => {
-  const data = await fetch("http://localhost:4000/exp/graphql", {
+const getApiHealth = async () => {
+  const data = await fetch(process.env.NEXT_PUBLIC_BASE_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ query: query.loc.source.body }),
+    body: JSON.stringify({ query: HEALTH }),
   });
   return data.json();
 };
 
 export default async function Home() {
-  const data = await getData();
   return (
-    <>
+    <ChakraProvider>
       <ScrollUp />
       <Hero />
       <Features />
@@ -51,6 +45,6 @@ export default async function Home() {
       <Pricing />
       {/* <Blog /> */}
       <Contact />
-    </>
+    </ChakraProvider>
   );
 }

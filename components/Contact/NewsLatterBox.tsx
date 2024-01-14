@@ -1,9 +1,66 @@
 "use client";
 
+import ADD_TO_WAITLIST from "@/src/mutation/add_to_waitlist";
+import { useToast } from "@chakra-ui/react";
 import { useTheme } from "next-themes";
+import { useState } from "react";
 
 const NewsLatterBox = () => {
   const { theme } = useTheme();
+  const toast = useToast();
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
+  async function addEmailToWaitlist() {
+    const requestBody = {
+      query: ADD_TO_WAITLIST,
+      variables: {
+        email,
+        name,
+      },
+    };
+
+    try {
+      const response = await fetch(process.env.NEXT_PUBLIC_BASE_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          // Add any additional headers if needed
+        },
+        body: JSON.stringify(requestBody),
+      });
+
+      const responseData = await response.json();
+
+      if (response.ok) {
+        setName("");
+        setEmail("");
+        toast({
+          title: "Success",
+          description: "Congrats, your email is added to the waitlist!",
+          status: "success",
+          duration: 5000,
+          isClosable: true,
+        });
+      } else {
+        toast({
+          title: "Error",
+          description:
+            "Adding email to the waitlist failed. Please try again later!",
+          status: "error",
+          duration: 5000,
+          isClosable: true,
+        });
+        throw new Error(
+          responseData.errors?.[0]?.message || "GraphQL request failed",
+        );
+      }
+    } catch (error) {
+      console.error("Error:", error.message);
+      throw new Error("Failed to fetch data from the server");
+    }
+  }
 
   return (
     <div
@@ -21,6 +78,8 @@ const NewsLatterBox = () => {
       <div>
         <input
           type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
           name="name"
           placeholder="Enter your name"
           className="mb-4 w-full rounded-sm border border-stroke bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
@@ -28,11 +87,14 @@ const NewsLatterBox = () => {
         <input
           type="email"
           name="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your email"
           className="mb-4 w-full rounded-sm border border-stroke bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
         />
         <input
           type="submit"
+          onClick={addEmailToWaitlist}
           value="Join the Waitlist"
           className="mb-5 flex w-full cursor-pointer items-center justify-center rounded-sm bg-primary px-9 py-4 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 dark:shadow-submit-dark"
         />
