@@ -2,8 +2,13 @@
 import { useState } from "react";
 import { isEmail } from "validator";
 import NewsLatterBox from "./NewsLatterBox";
+import SEND_FEEDBACK from "@/src/mutation/send_feedback";
+import { Response } from "@/src/generated/graphql";
+import { useToast } from "@chakra-ui/react";
 
 const Contact = () => {
+  const toast = useToast();
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -12,7 +17,58 @@ const Contact = () => {
   const [emailError, setEmailError] = useState("");
   const [messageError, setMessageError] = useState("");
 
-  const handleSendFeedback = () => {
+  async function sendFeedback(email: string, name: string, message: string) {
+    const url = process.env.NEXT_PUBLIC_BASE_URL; // Replace with your GraphQL endpoint URL
+
+    const requestBody = {
+      query: SEND_FEEDBACK,
+      variables: {
+        email,
+        name,
+        message,
+      },
+    };
+
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          // Add any additional headers if needed
+        },
+        body: JSON.stringify(requestBody),
+      });
+
+      const responseData = await response.json();
+      const result = responseData["data"]["feedback"] as Response;
+
+      if (result.success) {
+        toast({
+          title: "Success",
+          description: "Your message has been sent!",
+          status: "success",
+          duration: 5000,
+          isClosable: true,
+        });
+        setEmail("");
+        setMessage("");
+        setName("");
+      } else {
+        toast({
+          title: "Failed",
+          description: result.message,
+          status: "error",
+          duration: 5000,
+          isClosable: true,
+        });
+      }
+    } catch (error) {
+      console.error("Error:", error.message);
+      throw new Error("Failed to send the message");
+    }
+  }
+
+  const handleSendFeedback = async () => {
     if (name === "") {
       setNameError("Name cannot be empty");
     } else {
@@ -36,6 +92,7 @@ const Contact = () => {
     if (nameError || emailError || messageError) {
       return;
     }
+    await sendFeedback(email, name, message);
   };
 
   return (
