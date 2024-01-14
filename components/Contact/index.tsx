@@ -69,27 +69,32 @@ const Contact = () => {
   }
 
   const handleSendFeedback = async () => {
+    let hasError = false;
     if (name === "") {
+      hasError = true;
       setNameError("Name cannot be empty");
     } else {
       setNameError("");
     }
 
     if (email === "") {
+      hasError = true;
       setEmailError("Email cannot be empty");
     } else if (!isEmail(email)) {
+      hasError = true;
       setEmailError("Email is invalid");
     } else {
       setEmailError("");
     }
 
     if (message === "") {
+      hasError = true;
       setMessageError("Message cannot be empty");
     } else {
       setMessageError("");
     }
 
-    if (nameError || emailError || messageError) {
+    if (hasError) {
       return;
     }
     await sendFeedback(email, name, message);
