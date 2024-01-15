@@ -17,7 +17,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 export const metadata: Metadata = {
   title: "Business Prokerage",
   description:
-    "Unlock the full potential of your business brokerage with Business Prokerage. Designed specifically for brokers, our platform automates critical tasks such as NDA signatures, leverages AI for optimized business listings, and provides direct access to verified investors. Streamline your workflow, increase efficiency, and seize new opportunities for growth. Experience the transformative power of our technology and revolutionize your brokerage operations today.",
+    "Unlock the full potential of your business brokerage with Business Prokerage. Designed specifically for brokers, our platform automates critical tasks such as NDA signatures, leverages AI for optimized business listings, and provides direct access to buyers with verified funds. Streamline your workflow, increase efficiency, and seize new opportunities for growth. Experience the transformative power of our technology and revolutionize your brokerage operations today.",
 };
 
 const getApiHealth = async () => {

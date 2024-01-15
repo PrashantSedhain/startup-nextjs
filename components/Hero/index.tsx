@@ -15,14 +15,15 @@ const Hero = () => {
                 data-wow-delay=".2s"
               >
                 <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
-                  A Powerful Platform for Brokers
+                  Platform with Arsenal of Tools for Brokers
                 </h1>
                 <p className="mb-12 text-base !leading-relaxed text-body-color dark:text-body-color-dark sm:text-lg md:text-xl">
-                  Experience the power of Business Prokerage as we automate NDA
-                  processes, streamline document management, connect you with
-                  verified investors, and harness the capabilities of AI for
-                  optimized listings. Elevate your brokerage operations to new
-                  heights with our secure, efficient, and feature-rich platform.
+                  Showcase premier businesses for sale on Business Prokerage,
+                  leveraging AI for optimized listings. Automate NDA processes,
+                  streamline document management and sharing, and connect with
+                  buyers with verified funds - all within a secure, efficient,
+                  and feature-rich platform, redefining excellence in brokerage
+                  operations.
                 </p>
                 <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                   <Link
