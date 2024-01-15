@@ -14,7 +14,7 @@ const featuresData: Feature[] = [
     ),
     title: "Buyers with Verified Funds",
     paragraph:
-      "Connect with a network of verified buyers who possess the necessary funds for investment. Business Prokerage provides you with direct access to this pool of potential partners, expanding your reach and increasing the likelihood of closing deals successfully.",
+      "Connect with a network of verified buyers who possess the necessary funds for investment. Business Proker provides you with direct access to this pool of potential partners, expanding your reach and increasing the likelihood of closing deals successfully.",
   },
   {
     id: 1,
@@ -29,7 +29,7 @@ const featuresData: Feature[] = [
     ),
     title: "Auto Generated NDA",
     paragraph:
-      "Business Prokerage provides the convenience of automatically generating non-disclosure agreements (NDAs) for your business transactions. Simplify the process and ensure that sensitive information remains protected throughout your brokerage endeavors.",
+      "Business Proker provides the convenience of automatically generating non-disclosure agreements (NDAs) for your business transactions. Simplify the process and ensure that sensitive information remains protected throughout your brokerage endeavors.",
   },
   {
     id: 1,
@@ -59,7 +59,7 @@ const featuresData: Feature[] = [
     ),
     title: "AI Assisted Business Listing",
     paragraph:
-      "Leverage the power of artificial intelligence to create compelling and engaging business listings. Business Prokerage integrates AI technology to assist you in crafting listings that attract potential buyers and investors, maximizing your chances of successful transactions.",
+      "Leverage the power of artificial intelligence to create compelling and engaging business listings. Business Proker integrates AI technology to assist you in crafting listings that attract potential buyers and investors, maximizing your chances of successful transactions.",
   },
   {
     id: 1,
@@ -74,7 +74,7 @@ const featuresData: Feature[] = [
     ),
     title: "Document Storage and Sharing",
     paragraph:
-      "Ensure the safety and confidentiality of your important documents. Business Prokerage offers secure storage and sharing capabilities, allowing you to store, manage, and share crucial files with ease, all within a protected environment.",
+      "Ensure the safety and confidentiality of your important documents. Business Proker offers secure storage and sharing capabilities, allowing you to store, manage, and share crucial files with ease, all within a protected environment.",
   },
   {
     id: 1,

@@ -9,7 +9,7 @@ const Features = () => {
         <div className="container">
           <SectionTitle
             title="Main Features"
-            paragraph="Business Prokerage is packed with many essential features so you can focus on your business while we do other heavy liftings."
+            paragraph="Business Proker is packed with many essential features so you can focus on your business while we do other heavy liftings."
             center
           />
 

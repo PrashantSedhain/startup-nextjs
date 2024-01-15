@@ -18,7 +18,7 @@ const Hero = () => {
                   Platform with Arsenal of Tools for Brokers
                 </h1>
                 <p className="mb-12 text-base !leading-relaxed text-body-color dark:text-body-color-dark sm:text-lg md:text-xl">
-                  Showcase premier businesses for sale on Business Prokerage,
+                  Showcase premier businesses for sale on Business Proker,
                   leveraging AI for optimized listings. Automate NDA processes,
                   streamline document management and sharing, and connect with
                   buyers with verified funds - all within a secure, efficient,

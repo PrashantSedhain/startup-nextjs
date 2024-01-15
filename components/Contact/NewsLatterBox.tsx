@@ -93,7 +93,7 @@ const NewsLatterBox = () => {
         Join the Waitlist
       </h3>
       <p className="mb-6 border-b border-body-color border-opacity-25 pb-11 text-base leading-relaxed text-body-color dark:border-white dark:border-opacity-25">
-        Business Prokerage is currently in development and we are expecting the
+        Business Proker is currently in development and we are expecting the
         release the beta version in June 2024. Join the waitlist so we can
         notify you with updates.
       </p>

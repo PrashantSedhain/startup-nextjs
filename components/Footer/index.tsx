@@ -30,8 +30,8 @@ const Footer = () => {
                   />
                 </Link>
                 <p className="mb-9 text-base leading-relaxed text-body-color dark:text-body-color-dark">
-                  Business Prokerage is a modern solution to save hundreds of
-                  hours of manual labor.
+                  Business Proker is a modern solution to save hundreds of hours
+                  of manual labor.
                 </p>
                 <div className="flex items-center">
                   <a
@@ -192,7 +192,7 @@ const Footer = () => {
           <div className="h-px w-full bg-gradient-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]"></div>
           <div className="py-8">
             <p className="text-center text-base text-body-color dark:text-white">
-              Business Prokerage{" "}
+              Business Proker{" "}
               <a href="#" rel="nofollow noopener">
                 Copyright 2024
               </a>
