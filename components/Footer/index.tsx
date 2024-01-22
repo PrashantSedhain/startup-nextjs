@@ -16,7 +16,7 @@ const Footer = () => {
                 <div className="mb-8 inline-block">
                   <div style={{ width: "140px" }}>
                     <Image
-                      src="/images/logo/meeting-logo.png"
+                      src="/images/logo/meeting.png"
                       alt="logo"
                       className="w-full dark:hidden"
                       width={140}
@@ -25,7 +25,7 @@ const Footer = () => {
                   </div>
                   <div style={{ width: "140px" }}>
                     <Image
-                      src="/images/logo/meeting-logo.png"
+                      src="/images/logo/meeting.png"
                       alt="logo"
                       className="hidden w-full dark:block"
                       width={140}
