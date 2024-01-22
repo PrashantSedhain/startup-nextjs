@@ -13,22 +13,26 @@ const Footer = () => {
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-5/12">
               <div className="mb-12 max-w-[360px] lg:mb-16">
-                <Link href="/" className="mb-8 inline-block">
-                  <Image
-                    src="/images/logo/meeting-logo.png"
-                    alt="logo"
-                    className="w-full dark:hidden"
-                    width={140}
-                    height={30}
-                  />
-                  <Image
-                    src="/images/logo/meeting-logo.png"
-                    alt="logo"
-                    className="hidden w-full dark:block"
-                    width={140}
-                    height={30}
-                  />
-                </Link>
+                <div className="mb-8 inline-block">
+                  <div style={{ width: "140px" }}>
+                    <Image
+                      src="/images/logo/meeting-logo.png"
+                      alt="logo"
+                      className="w-full dark:hidden"
+                      width={140}
+                      height={30}
+                    />
+                  </div>
+                  <div style={{ width: "140px" }}>
+                    <Image
+                      src="/images/logo/meeting-logo.png"
+                      alt="logo"
+                      className="hidden w-full dark:block"
+                      width={140}
+                      height={30}
+                    />
+                  </div>
+                </div>
                 <p className="mb-9 text-base leading-relaxed text-body-color dark:text-body-color-dark">
                   Business Proker is a modern solution to save hundreds of hours
                   of manual labor.
