@@ -36,13 +36,13 @@ const AboutSectionOne = () => {
                 <div className="mx-[-12px] flex flex-wrap">
                   <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
                     <List text="Zero Commission Hassle" />
-                    <List text="Targeted Client Exposure" />
+                    <List text="Client Exposure" />
                     <List text="Customizable Branding" />
                   </div>
 
                   <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="Easy Listing Management" />
-                    <List text="Smooth Client Interaction" />
+                    <List text="Manage/Promote Listing" />
+                    <List text="Client Interaction" />
                     <List text="Analytics for Growth" />
                   </div>
                 </div>

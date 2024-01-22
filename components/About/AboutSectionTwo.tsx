@@ -20,7 +20,7 @@ const AboutSectionTwo = () => {
                 src="/images/about/about-image-2-dark.svg"
                 alt="about image"
                 fill
-                className="drop-shadow-three hidden dark:block dark:drop-shadow-none"
+                className="hidden drop-shadow-three dark:block dark:drop-shadow-none"
               />
             </div>
           </div>
@@ -28,29 +28,37 @@ const AboutSectionTwo = () => {
             <div className="wow fadeInUp max-w-[470px]" data-wow-delay=".2s">
               <div className="mb-9">
                 <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                  Bug free code
+                  User Friendly Design
                 </h3>
                 <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  We understand the importance of seamless interaction across
+                  devices. Our website is meticulously designed to adapt
+                  effortlessly to various screens, ensuring a consistent and
+                  enjoyable experience for users on desktops, tablets, and
+                  smartphones.
                 </p>
               </div>
               <div className="mb-9">
                 <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                  Premier support
+                  24/7 Availability
                 </h3>
                 <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt.
+                  Your business never sleeps, and neither do we. Our platform is
+                  available 24/7, providing uninterrupted access for both
+                  brokers and clients. Whether it is day or night, we are here
+                  to support your business endeavors.
                 </p>
               </div>
               <div className="mb-1">
                 <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                  Next.js
+                  Dedicated Customer Support
                 </h3>
                 <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
-                  Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt
-                  consectetur adipiscing elit setim.
+                  Your success is our priority. Our customer support team is
+                  ready to assist you at every step. From answering inquiries to
+                  resolving issues promptly, we are committed to providing
+                  exceptional support, ensuring your journey with us is smooth
+                  and successful.
                 </p>
               </div>
             </div>
