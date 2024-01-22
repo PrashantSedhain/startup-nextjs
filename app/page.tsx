@@ -13,6 +13,7 @@ import { gql } from "@apollo/client";
 import { Metadata } from "next";
 import HEALTH from "@/src/queries/getHealth";
 import { ChakraProvider } from "@chakra-ui/react";
+import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Business Proker",
@@ -34,6 +35,13 @@ const getApiHealth = async () => {
 export default async function Home() {
   return (
     <ChakraProvider>
+      <Head>
+        <title>Business Proker</title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover"
+        ></meta>
+      </Head>
       <ScrollUp />
       <Hero />
       <Features />
