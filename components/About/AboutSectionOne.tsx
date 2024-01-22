@@ -24,10 +24,8 @@ const AboutSectionOne = () => {
           <div className="-mx-4 flex flex-wrap items-center">
             <div className="w-full px-4 lg:w-1/2">
               <SectionTitle
-                title="One Stop Platform"
-                paragraph="Secure, user-friendly platform with blazing-fast pages, responsive support, 
-                and efficient bug management. We value your feedback and strive to exceed expectations. 
-                Experience seamless navigation and robust security. Join us for an exceptional platform experience."
+                title="Why to Join Us?"
+                paragraph="Broker Bliss: Showcase businesses with zero commission stress. Effortless listing management, targeted exposure, customizable branding. Seamlessly connect with clients, backed by powerful analytics for smart growth. Your business, your way—commission-free success awaits!"
                 mb="44px"
               />
 
@@ -37,15 +35,15 @@ const AboutSectionOne = () => {
               >
                 <div className="mx-[-12px] flex flex-wrap">
                   <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="User Friendly Interface" />
-                    <List text="Robust Security Measures" />
-                    <List text="Responsive Customer Support" />
+                    <List text="Zero Commission Hassle" />
+                    <List text="Targeted Client Exposure" />
+                    <List text="Customizable Branding" />
                   </div>
 
                   <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="Feedback Integration" />
-                    <List text="Blazing Fast Pages" />
-                    <List text="Efficient Bug Management" />
+                    <List text="Easy Listing Management" />
+                    <List text="Smooth Client Interaction" />
+                    <List text="Analytics for Growth" />
                   </div>
                 </div>
               </div>
